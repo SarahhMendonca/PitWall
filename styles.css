@@ -1,0 +1,492 @@
+:root {
+  --black: #0b0b0f;
+  --panel: #16161d;
+  --red: #e10600;
+  --white: #f5f5f7;
+  --muted: #8e8e9a;
+  --line: #272732;
+  --ferrari: #e10600;
+  --mclaren: #ff8000;
+  --mercedes: #00d2be;
+  --audi: #b5b5bd;
+  --font: 'Titillium Web', 'Segoe UI', sans-serif;
+}
+
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font);
+  background: var(--black);
+  color: var(--white);
+  line-height: 1.5;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* 1. TOPBAR */
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 40px;
+  border-bottom: 1px solid var(--line);
+  background: var(--black);
+}
+
+.logo {
+  font-weight: 900;
+  font-style: italic;
+  font-size: 1.4rem;
+  letter-spacing: 1px;
+}
+
+.logo span {
+  color: var(--red);
+}
+
+.menu {
+  display: flex;
+  gap: 32px;
+}
+
+.menu a {
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--muted);
+}
+
+.menu a:hover {
+  color: var(--white);
+}
+
+.btn-red {
+  background: var(--red);
+  color: var(--white);
+  padding: 10px 20px;
+  font-weight: 700;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  border: none;
+  cursor: pointer;
+  display: inline-block;
+}
+
+.btn-red:hover {
+  opacity: 0.85;
+}
+
+.btn-outline {
+  background: transparent;
+  color: var(--white);
+  padding: 10px 20px;
+  font-weight: 700;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  border: 1px solid var(--white);
+  cursor: pointer;
+  display: inline-block;
+}
+
+.btn-outline:hover {
+  background: var(--white);
+  color: var(--black);
+}
+
+/* 2. HERO + ZEBRA */
+.hero {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  padding: 70px 40px 50px;
+  min-height: 430px;
+  background: linear-gradient(110deg,
+      var(--black) 0%, var(--black) 62%,
+      var(--red) 62%, var(--red) 64%,
+      rgba(11, 11, 15, 0.35) 64%),
+      url('img/piloto.jpg') center / cover no-repeat;
+}
+
+.hero-content {
+  max-width: 520px;
+}
+
+.subtitle {
+  color: var(--red);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  margin-bottom: 10px;
+}
+
+.hero h1 {
+  font-size: 3.5rem;
+  font-weight: 900;
+  font-style: italic;
+  line-height: 0.95;
+  margin-bottom: 16px;
+}
+
+.hero h1 span {
+  display: block;
+  color: var(--red);
+}
+
+.description {
+  color: var(--muted);
+  font-size: 0.95rem;
+  margin-bottom: 24px;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 12px;
+}
+
+.track-info {
+  display: flex;
+  gap: 24px;
+}
+
+.info {
+  border-left: 1px solid var(--line);
+  padding-left: 16px;
+  text-align: center;
+}
+
+.info strong {
+  display: block;
+  font-size: 1.6rem;
+  font-weight: 900;
+  font-style: italic;
+}
+
+.info span {
+  font-size: 0.7rem;
+  color: var(--muted);
+  letter-spacing: 1px;
+}
+
+.kerb {
+  height: 10px;
+  background: repeating-linear-gradient(90deg,
+    var(--red) 0, var(--red) 40px,
+    var(--white) 40px, var(--white) 80px);
+}
+
+/* CONTAINER E SEÇÕES */
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 50px 24px;
+}
+
+.section {
+  margin-bottom: 64px;
+}
+
+.section h2 {
+  font-size: 1.5rem;
+  font-weight: 900;
+  font-style: italic;
+  margin-bottom: 24px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.section h2 span {
+  color: var(--red);
+  font-size: 0.9rem;
+}
+
+/* 3. GRID DE PILOTOS */
+.drivers {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+}
+
+.driver-card {
+  background: var(--panel);
+  padding: 20px;
+  border-top: 3px solid var(--line);
+}
+
+.driver-card:hover {
+  opacity: 0.9;
+}
+
+.driver-card.ferrari { border-top-color: var(--ferrari); }
+.driver-card.mclaren { border-top-color: var(--mclaren); }
+.driver-card.mercedes { border-top-color: var(--mercedes); }
+.driver-card.audi { border-top-color: var(--audi); }
+
+.driver-num {
+  font-size: 2.5rem;
+  font-weight: 900;
+  font-style: italic;
+  line-height: 1;
+  margin-bottom: 12px;
+  opacity: 0.55;
+}
+
+.ferrari .driver-num { color: var(--ferrari); }
+.mclaren .driver-num { color: var(--mclaren); }
+.mercedes .driver-num { color: var(--mercedes); }
+.audi .driver-num { color: var(--audi); }
+
+.driver-name {
+  font-size: 0.95rem;
+}
+
+.driver-team {
+  font-size: 0.8rem;
+  color: var(--muted);
+}
+
+/* 4. CLASSIFICAÇÃO */
+.filters {
+  display: flex;
+  gap: 16px;
+  align-items: flex-end;
+  margin-bottom: 20px;
+}
+
+.filter-group {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.filter-group label {
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: var(--muted);
+}
+
+.filter-group input,
+.filter-group select {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  color: var(--white);
+  padding: 10px 12px;
+  font-family: var(--font);
+  font-size: 0.9rem;
+}
+
+.table-wrap {
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--panel);
+  font-size: 0.9rem;
+}
+
+th, td {
+  padding: 14px 16px;
+  text-align: left;
+  border-bottom: 1px solid var(--line);
+}
+
+th {
+  font-size: 0.7rem;
+  color: var(--muted);
+  letter-spacing: 1px;
+}
+
+tbody tr:hover {
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.leader-row {
+  background: rgba(225, 6, 0, 0.12);
+}
+
+.pos-badge {
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  line-height: 24px;
+  text-align: center;
+  background: var(--white);
+  color: var(--black);
+  font-weight: 900;
+  font-size: 0.8rem;
+}
+
+.pos-badge.leader {
+  background: var(--red);
+  color: var(--white);
+}
+
+.team-bar {
+  display: inline-block;
+  width: 3px;
+  height: 14px;
+  margin-right: 8px;
+  vertical-align: middle;
+}
+
+.mclaren-bg { background: var(--mclaren); }
+.ferrari-bg { background: var(--ferrari); }
+.mercedes-bg { background: var(--mercedes); }
+.audi-bg { background: var(--audi); }
+
+.muted {
+  color: var(--muted);
+}
+
+/* 5. INGRESSOS */
+.tickets {
+  display: grid;
+  grid-template-columns: 1fr 1.6fr;
+  gap: 32px;
+  align-items: start;
+}
+
+.alert-box {
+  background: rgba(255, 193, 7, 0.1);
+  border-left: 3px solid #ffc107;
+  color: #ffc107;
+  padding: 12px 16px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  margin: 20px 0;
+}
+
+.price-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 14px 0;
+  border-bottom: 1px solid var(--line);
+  font-size: 0.9rem;
+}
+
+.price-item strong {
+  color: var(--red);
+}
+
+.ticket-form {
+  background: var(--panel);
+  padding: 24px;
+  border-top: 3px solid var(--red);
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.field.full {
+  grid-column: 1 / -1;
+}
+
+.field label {
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: var(--muted);
+}
+
+.field input,
+.field select,
+.field textarea {
+  background: var(--black);
+  border: 1px solid var(--line);
+  color: var(--white);
+  padding: 10px 12px;
+  font-family: var(--font);
+  font-size: 0.9rem;
+}
+
+.field small {
+  font-size: 0.72rem;
+  color: var(--muted);
+}
+
+.btn-submit {
+  width: 100%;
+  padding: 14px;
+  margin-top: 4px;
+}
+
+/* 6. FOOTER */
+footer {
+  border-top: 1px solid var(--line);
+  padding: 24px;
+  text-align: center;
+  font-size: 0.8rem;
+  color: var(--muted);
+}
+
+footer span {
+  color: var(--red);
+  font-weight: 900;
+}
+
+/* PASSO 11: RESPONSIVIDADE NO CELULAR */
+@media (max-width: 768px) {
+  .topbar {
+    padding: 16px 20px;
+  }
+
+  .menu {
+    display: none;
+  }
+
+  .hero {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 32px;
+    padding: 40px 20px;
+    background: var(--black);
+  }
+
+  .hero h1 {
+    font-size: 3.2rem;
+  }
+
+  .drivers {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .filters {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  table {
+    min-width: 620px;
+  }
+
+  td {
+    white-space: nowrap;
+  }
+
+  .tickets {
+    grid-template-columns: 1fr;
+  }
+
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+}
